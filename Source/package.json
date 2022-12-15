@@ -12,7 +12,9 @@
     "publish": "electron-forge publish",
     "lint": "echo \"No linting configured\"",
     "npmstart": "electron ./scripts/main.js",
-    "test": "mocha"
+    "test": "mocha",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -28,11 +30,11 @@
   },
   "homepage": "https://github.com/sebthedev/MacDropAny#readme",
   "devDependencies": {
-    "@electron-forge/cli": "^6.0.0-beta.45",
-    "@electron-forge/maker-deb": "^6.0.0-beta.45",
-    "@electron-forge/maker-rpm": "^6.0.0-beta.45",
-    "@electron-forge/maker-squirrel": "^6.0.0-beta.45",
-    "@electron-forge/maker-zip": "^6.0.0-beta.45",
+    "@electron-forge/cli": "^6.0.1",
+    "@electron-forge/maker-deb": "^6.0.0",
+    "@electron-forge/maker-rpm": "^6.0.0",
+    "@electron-forge/maker-squirrel": "^6.0.0",
+    "@electron-forge/maker-zip": "^6.0.0",
     "electron": "^7.1.1",
     "mocha": "^7.1.1"
   },
@@ -42,7 +44,8 @@
     "node-cmd": "^3.0.0",
     "universal-analytics": "^0.4.20",
     "update-electron-app": "^1.5.0",
-    "uuid": "^7.0.3"
+    "uuid": "^7.0.3",
+    "@snyk/protect": "latest"
   },
   "config": {
     "forge": {
@@ -86,5 +89,6 @@
         }
       ]
     }
-  }
+  },
+  "snyk": true
 }
